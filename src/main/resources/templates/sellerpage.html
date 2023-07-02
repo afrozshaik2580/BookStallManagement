@@ -1,0 +1,30 @@
+ <!DOCTYPE unspecified PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Seller Page</title>
+	</head>
+	<body>
+		<h1>welcome to seller page <span th:text="${user.name}"></span></h1>
+		
+		<h3>Your books are:</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Author</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="book :${books}">
+					<td th:text="${book.getName()}"/>
+					<td th:text="${book.getAuthor()}"/>
+					<td><a th:href="@{/sellerpage/updatebook/{id}(id=${book.id})}">Update</a></td>
+					<td><a th:href="@{/sellerpage/deletebook/{id}(id=${book.id})}">Delete</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<a  th:href="@{/sellerpage/addBookToSell}">Add Book</a>
+	</body>
+</html>

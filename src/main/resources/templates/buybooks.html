@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Buy Books</title>
+</head>
+<body>
+	<h1>Sellers are:</h1>
+	<ul>
+		<li th:each="seller: ${sellers}" >
+			<a th:href="@{buybooks/{sellerEmail}(sellerEmail=${seller.email})}" th:text="${seller.name}"></a>
+		</li>
+	</ul>
+</body>
+</html>

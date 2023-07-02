@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Book</title>
+</head>
+<body>
+	<h1>Add a new Book for <span th:text="${user.name}"></span></h1>
+	
+	<form action="" method="post" th:object="${book}">
+		<p>Name of the Book:<input th:field="*{name}" type="text" name="name" required="required"/></p>
+		<p>Author of the Book:<input th:field="*{author}" type="text" name="author" required="required"/></p>
+		<p> <input type="submit" value="ADD"/> </p>
+	</form>
+</body>
+</html>

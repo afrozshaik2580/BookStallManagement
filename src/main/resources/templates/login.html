@@ -1,0 +1,20 @@
+<!DOCTYPE unspecified PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Login</title>
+	</head>
+	<body>
+		<form action="" method="post">
+		
+			<h1 th:if="${param.addedUser}">SignUp successful.</h1>
+			<h1>Login Here !</h1>
+			<h1 th:if="${param.usernotfound}">User Not Found. Sign Up to continue.</h1>
+			Email: <input type="text" id="username" name="username" required="required"/>
+			Password: <input type="password" id="password" name="password" required="required"/>
+			<input type="submit" name="Login"/>
+			
+			<p>Not a User? <a th:href="@{/signup}">Sign Up</a> now.</p>
+			
+		</form>
+	</body>
+</html>

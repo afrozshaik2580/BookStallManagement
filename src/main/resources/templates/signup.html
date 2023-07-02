@@ -1,0 +1,23 @@
+<!DOCTYPE unspecified PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>SignUp</title>
+	</head>
+	<body>
+		<form action="" method="post" th:object="${user}">
+		
+			<h1>SignUp Here !</h1>
+			<h1 th:if="${param.userAlreadyExists}">User already Exists.</h1>
+			Name: <input type="text" name="name" required="required" th:field="*{name}"/>
+			Email: <input type="text" name="email" th:field="*{email}"/>
+			Password: <input type="text" name="password" required="required" th:field="*{password}"/>
+			<select name="role" required="required" th:field="*{role}">
+				<option value="role" selected="selected" disabled="disabled">Role</option>
+				<option value="buyer" >Buyer</option>
+				<option value="seller" >Seller</option>
+			</select>
+			<input type="submit" name="SignUp"/>
+			<p>Signed up? <a th:href="@{/login}">Login</a> Here</p>
+		</form>
+	</body>
+</html>
